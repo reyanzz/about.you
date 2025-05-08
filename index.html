@@ -30,6 +30,35 @@
       z-index: 0;
     }
 
+    .love-rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff6b81;
+      font-size: 20px;
+      animation: fall 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10%);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
     .book-cover {
       text-align: center;
       margin-bottom: 30px;
@@ -118,6 +147,7 @@
 </head>
 <body>
   <div class="overlay"></div>
+  <div class="love-rain"></div>
   <div class="book-cover">
     <h1>3726mdpl</h1>
     <h2>About S</h2>
@@ -153,6 +183,23 @@
       showNextQuote();
       setInterval(showNextQuote, 8000);
     });
+
+    const loveRain = document.querySelector(".love-rain");
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.textContent = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 10 + 10) + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      loveRain.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+
+    setInterval(createHeart, 300);
   </script>
 </body>
 </html>
