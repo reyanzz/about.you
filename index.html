@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -177,7 +178,6 @@
   </style>
 </head>
 <body>
-  <!-- Background video -->
   <video autoplay muted loop id="bg-video">
     <source src="VID_20250523_130008_896.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
@@ -201,6 +201,12 @@
     <p>"terimakasih karena telah menjadi orang yang pernah aku kagumi, meskipun akhirnya aku harus melupakanmu." 3726mdpl</p>
   </div>
   <div class="credit">created by R</div>
+
+  <audio id="bg-audio" controls style="position: fixed; bottom: 60px; right: 20px; z-index: 2;">
+    <source src="The 1975 - About You (Official).mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const quotes = Array.from(document.querySelectorAll(".quotes p"));
@@ -216,7 +222,7 @@
       }
 
       const button = document.createElement("button");
-      button.textContent = "Tampilkan Kutipan Berikutnya";
+      button.textContent = "Beri Aku Kutipan Indah Lagi";
       button.addEventListener("click", showNextQuote);
       document.querySelector(".quotes").after(button);
 
@@ -240,10 +246,5 @@
 
     setInterval(createHeart, 300);
   </script>
-
-  <audio id="bg-audio" controls style="position: fixed; top: 20px; right: 20px; z-index: 2;">
-    <source src="The 1975 - About You (Official).mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
 </body>
 </html>
