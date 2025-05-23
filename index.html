@@ -166,9 +166,26 @@
       background: rgba(0, 0, 0, 0.6);
       transform: scale(1.05);
     }
+  
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
   </style>
 </head>
 <body>
+  <!-- Background video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="VID_20250523_115530_501.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
   <div class="overlay"></div>
   <div class="love-rain"></div>
   <div class="book-cover">
